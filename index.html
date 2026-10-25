@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stable Haven | Horse Stabling & Riding School</title>
+
+    <!-- Connect CSS and JavaScript -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <a href="#home" class="logo">🐎 Stable Haven</a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#horses">Our Horses</a>
+            <a href="#booking">Book a Lesson</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">WELCOME TO STABLE HAVEN</p>
+            <h1>Where Every Ride<br>Begins a Journey.</h1>
+            <p>
+                Quality horse stabling, professional riding lessons,
+                and a welcoming home for horse lovers of all ages.
+            </p>
+            <a href="#booking" class="button">Book a Riding Lesson</a>
+        </div>
+    </section>
+
+    <section class="intro">
+        <h2>Discover the Joy of Horses</h2>
+        <p>
+            Whether you own a horse or want to learn to ride,
+            Stable Haven offers a friendly environment where
+            horses and riders can thrive together.
+        </p>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+
+        <div class="card-container">
+            <div class="card">
+                <div class="icon">🏡</div>
+                <h3>Horse Stabling</h3>
+                <p>
+                    Comfortable stalls, daily feeding, clean bedding,
+                    and attentive everyday care for your horse.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🏇</div>
+                <h3>Riding Lessons</h3>
+                <p>
+                    Learn riding basics, balance, horse handling,
+                    and riding skills with qualified instructors.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌿</div>
+                <h3>Outdoor Riding</h3>
+                <p>
+                    Enjoy guided outdoor rides and build confidence
+                    around horses in a supervised environment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="horses" id="horses">
+        <h2>Meet Our Horses</h2>
+        <p class="section-subtitle">
+            Get to know a few of our friendly stable residents.
+        </p>
+
+        <div class="card-container">
+            <div class="horse-card">
+                <div class="horse-image horse-one">🐴</div>
+                <h3>Sunny</h3>
+                <p>Gentle and friendly — great for beginners.</p>
+            </div>
+
+            <div class="horse-card">
+                <div class="horse-image horse-two">🐎</div>
+                <h3>Thunder</h3>
+                <p>Energetic and athletic — loves outdoor rides.</p>
+            </div>
+
+            <div class="horse-card">
+                <div class="horse-image horse-three">🐴</div>
+                <h3>Coco</h3>
+                <p>Calm and patient — a wonderful lesson partner.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="booking">
+        <h2>Book a Riding Lesson</h2>
+        <p>Fill in your details and we will be ready to plan your visit.</p>
+
+        <form id="booking-form">
+            <label for="name">Your Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="lesson">Choose a Lesson</label>
+            <select id="lesson" required>
+                <option value="">Select a lesson</option>
+                <option value="Beginner Riding">Beginner Riding</option>
+                <option value="Intermediate Riding">Intermediate Riding</option>
+                <option value="Outdoor Riding">Outdoor Riding</option>
+                <option value="Horse Care Introduction">Horse Care Introduction</option>
+            </select>
+
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" required>
+
+            <button type="submit" class="button">Request Booking</button>
+        </form>
+
+        <p id="booking-message" role="status"></p>
+    </section>
+
+    <footer>
+        <h3>🐎 Stable Haven</h3>
+        <p>A home for horses. A passion for riding.</p>
+        <p>Email: hello@stablehaven.example</p>
+        <p>&copy; <span id="year"></span> Stable Haven. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

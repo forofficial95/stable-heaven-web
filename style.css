@@ -1,0 +1,314 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333b30;
+    background: #faf8f1;
+    line-height: 1.6;
+}
+
+header {
+    background: #244936;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #d8c39a;
+}
+
+.hero {
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    padding: 65px 8%;
+    background:
+        linear-gradient(90deg, #182c20e8, #182c2080),
+        url("https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=1800&q=85");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tagline {
+    color: #e3c994;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero-content > p:not(.tagline) {
+    max-width: 550px;
+    margin-bottom: 28px;
+    color: #f0eee6;
+}
+
+.button {
+    display: inline-block;
+    background: #b88b52;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.button:hover {
+    background: #956c39;
+}
+
+.intro {
+    text-align: center;
+    padding: 55px 8%;
+    max-width: 950px;
+    margin: auto;
+}
+
+.intro h2, .services h2, .horses h2,
+.booking h2 {
+    font-size: 30px;
+    color: #244936;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    color: #687064;
+}
+
+.services, .horses {
+    padding: 55px 8%;
+    text-align: center;
+}
+
+.services {
+    background: #f0eee3;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card, .horse-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #263b2710;
+    flex: 1 1 230px;
+    max-width: 350px;
+}
+
+.card {
+    padding: 28px 22px;
+}
+
+.icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.card h3, .horse-card h3 {
+    color: #244936;
+    margin-bottom: 10px;
+}
+
+.card p, .horse-card p {
+    font-size: 14px;
+    color: #687064;
+}
+
+.horse-image {
+    height: 155px;
+    display: grid;
+    place-items: center;
+    font-size: 75px;
+}
+
+.horse-one {
+    background: #e9d8b8;
+}
+
+.horse-two {
+    background: #d7e4d4;
+}
+
+.horse-three {
+    background: #eadbd2;
+}
+
+.horse-card h3 {
+    margin-top: 18px;
+}
+
+.horse-card p {
+    padding: 0 20px 24px;
+}
+
+.section-subtitle {
+    color: #687064;
+}
+
+.booking {
+    background: #e7eddf;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.booking > p {
+    color: #687064;
+    margin-bottom: 22px;
+}
+
+form {
+    background: white;
+    max-width: 500px;
+    margin: 25px auto 0;
+    padding: 28px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 5px 20px #263b2710;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 13px 0 6px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d6dbd0;
+    border-radius: 5px;
+    font-size: 14px;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #a4b99b;
+    border-color: #244936;
+}
+
+form .button {
+    width: 100%;
+    margin-top: 22px;
+    font-size: 15px;
+}
+
+#booking-message {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #244936;
+}
+
+footer {
+    text-align: center;
+    background: #244936;
+    color: white;
+    padding: 30px 15px;
+}
+
+footer h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #e1e7dc;
+    font-size: 13px;
+    margin: 5px;
+}
+
+@media (max-width: 650px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 50px 7%;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .intro h2, .services h2,
+    .horses h2, .booking h2 {
+        font-size: 25px;
+    }
+
+    .services, .horses {
+        padding: 40px 6%;
+    }
+
+    .card-container {
+        gap: 18px;
+    }
+
+    .card, .horse-card {
+        flex-basis: 100%;
+    }
+
+    form {
+        padding: 22px;
+    }
+}
