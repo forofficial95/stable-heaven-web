@@ -1,81 +1,45 @@
 
-const bookingForm = document.getElementById("booking-form");
-const bookingMessage = document.getElementById("booking-message");
-const dateInput = document.getElementById("date");
+document.addEventListener("DOMContentLoaded", () => {
+    const bookingForm = document.getElementById("booking-form");
+    const dateInput = document.getElementById("date");
+    const bookingMessage = document.getElementById("booking-message");
+    const yearElement = document.getElementById("year");
 
-// Set the minimum booking date to today.
-const today = new Date();
-const localToday = [
-    today.getFullYear(),
-    String(today.getMonth() + 1).padStart(2, "0"),
-    String(today.getDate()).padStart(2, "0")
-].join("-");
+    // Display the current year in the footer.
+    yearElement.textContent = new Date().getFullYear();
 
-dateInput.min = localToday;
+    // Use the user's local date rather than UTC.
+    const today = new Date();
+    const localDate = [
+        today.getFullYear(),
+        String(today.getMonth() + 1).padStart(2, "0"),
+        String(today.getDate()).padStart(2, "0")
+    ].join("-");
 
-// Display the current year in the footer.
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+    dateInput.min = localDate;
 
-// Handle the booking form.
-bookingForm.addEventListener("submit", function(event) {
-    event.preventDefault();
+    bookingForm.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const lesson = document.getElementById("lesson").value;
-    const date = dateInput.value;
-
-    // Check that the date is not in the past.
-    if (date < localToday) {
-        bookingMessage.textContent =
-            "Please select today or a future date.";
-        return;
-    }
-
-    const booking = {
-        name: name,
-        email: email,
-        lesson: lesson,
-        date: date,
-        requestedAt: new Date().toISOString()
-    };
-
-    // Read existing demo bookings.
-    let bookings = [];
-
-    try {
-        bookings = JSON.parse(
-            localStorage.getItem("stableHavenBookings") || "[]"
-        );
-
-        if (!Array.isArray(bookings)) {
-            bookings = [];
+        if (!bookingForm.reportValidity()) {
+            return;
         }
-    } catch {
-        bookings = [];
-    }
 
-    bookings.push(booking);
+        if (dateInput.value < localDate) {
+            bookingMessage.textContent =
+                "Please select today or a future date.";
+            dateInput.focus();
+            return;
+        }
 
-    // Save the new booking in the browser.
-    try {
-        localStorage.setItem(
-            "stableHavenBookings",
-            JSON.stringify(bookings)
-        );
+        const formData = new FormData(bookingForm);
+        const name = formData.get("name").trim();
 
         bookingMessage.textContent =
-            "Thank you, " + name + "! Your request for " +
-            lesson + " on " + date +
-            " has been saved. Please contact the stable to confirm availability.";
+            `Thank you, ${name}! Your lesson request has been prepared. ` +
+            "Please contact the stable to confirm your booking.";
 
         bookingForm.reset();
-    } catch {
-        bookingMessage.textContent =
-            "Your form was completed, but the request could not be saved. Please try again.";
-    }
-
-    // Keep the date restriction after resetting the form.
-    dateInput.min = localToday;
+        dateInput.min = localDate;
+    });
 });
